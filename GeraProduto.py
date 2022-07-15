@@ -4,7 +4,6 @@ import os
 def limpar():
     os.system("cls")
 
-
 limpar()
 
 #tratamento de erro
@@ -28,23 +27,30 @@ lista_primos=[2]
 proximo=3
 
 comeco=0
+verificador=0
 #adiciona primos a lista enquanto não chegar ao ultimo numero de n digitos
 while proximo<tamanho_numero:
     
     #algoritmo para melhor eficienci na hora encontrar os primos
     quantidade=int(len(lista_primos)/2)
-    for n in lista_primos[1:quantidade]:
-
+    if quantidade < len(lista_primos)/2:
+        quantidade+=1
+    for n in lista_primos[1:verificador]:
         if(proximo%n==0):
             break
     else:
         lista_primos.append(proximo)
+        verificador+=1
         #comeco dos numeros com a quantidade de digitos definido
-       
-        if(len(str(proximo)) ==numero) and comeco==0:
-            comeco=len(lista_primos)-1
+
+        if comeco == 0:
+            #if alinhado para evitar comparacao e cast desnecessario 
+            if(len(str(proximo)) ==numero):
+                comeco=len(lista_primos)-1
+
     proximo+=2
     
 limpar()
+
 produto=lista_primos[randint(comeco,len(lista_primos))]*lista_primos[randint(comeco,len(lista_primos))]
 print(f"Produto de dois primos {produto}")
