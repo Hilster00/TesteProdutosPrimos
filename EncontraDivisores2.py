@@ -16,7 +16,6 @@ while True:
         limpar()
         print(f"Valor {numero} não é valido")
         
-
 #define o tamanho maximo do primo que será feito o teste
 tamanho_numero=len(str(numero))
 tamanho_numero="9"*tamanho_numero
@@ -42,7 +41,6 @@ while True:
             if resultado== proximo:
                 print(f"O número {numero} é produto de {resultado} por ele mesmo")
             else:
-               
                 for n in range(2,(int(resultado/2))):
                     if resultado%n == 0:
                         print(f"O nuemero {numero} não é produto de dois primos")
