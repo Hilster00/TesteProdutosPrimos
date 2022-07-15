@@ -1,4 +1,11 @@
-from random import choice
+from random import randint
+import os
+
+def limpar():
+    os.system("cls")
+
+
+limpar()
 
 #tratamento de erro
 while True:
@@ -9,6 +16,7 @@ while True:
         numero=int(numero)
         break
     except:
+        limpar()
         print(f"Valor {numero} não é valido")
 
 #define o tamanho maximo do primo que será feito o teste
@@ -19,6 +27,7 @@ tamanho_numero=int(tamanho_numero)+1
 lista_primos=[2]
 proximo=3
 
+comeco=0
 #adiciona primos a lista enquanto não chegar ao ultimo numero de n digitos
 while proximo<tamanho_numero:
     
@@ -31,10 +40,11 @@ while proximo<tamanho_numero:
     else:
         lista_primos.append(proximo)
         #comeco dos numeros com a quantidade de digitos definido
-        if(len(str(proximo)) ==numero):
+       
+        if(len(str(proximo)) ==numero) and comeco==0:
             comeco=len(lista_primos)-1
     proximo+=2
     
-
-produto=choice(lista_primos[comeco:len(lista_primos)])*choice(lista_primos[comeco:len(lista_primos)])
+limpar()
+produto=lista_primos[randint(comeco,len(lista_primos))]*lista_primos[randint(comeco,len(lista_primos))]
 print(f"Produto de dois primos {produto}")
