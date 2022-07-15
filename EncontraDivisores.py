@@ -1,3 +1,9 @@
+import os
+
+def limpar():
+    os.system("cls")
+
+limpar()
 #tratamento de erro
 while True:
     try:
@@ -31,7 +37,7 @@ while proximo<tamanho_numero:
         lista_primos.append(proximo)
     proximo+=2
     
-
+limpar()
 #verifica se o numero pertence aos primos
 if numero not in lista_primos:
     
@@ -51,7 +57,6 @@ if numero not in lista_primos:
                     #numero é n*m
                     print(f"O primeiro divisor de {numero} é {n} e o segundo é {numero/n:.0f}")
             
-            break
-    
+            break   
 else:
     print(f"O número {numero} é primo")
