@@ -1,3 +1,9 @@
+import os
+
+def limpar():
+    os.system("cls")
+
+limpar()
 #tratamento de erro
 while True:
     try:
@@ -7,7 +13,9 @@ while True:
         numero=int(numero)
         break
     except:
+        limpar()
         print(f"Valor {numero} não é valido")
+        
 
 #define o tamanho maximo do primo que será feito o teste
 tamanho_numero=len(str(numero))
@@ -28,8 +36,8 @@ while True:
         if(proximo%n==0):
             break
     else:
-        lista_primos.append(proximo)
         if numero%proximo == 0:
+            limpar()
             resultado=int(numero/proximo)
             if resultado== proximo:
                 print(f"O número {numero} é produto de {resultado} por ele mesmo")
@@ -42,4 +50,5 @@ while True:
                 else:
                     print(f"O primeiro divisor de {numero} é {proximo} e o segundo é {resultado}")
             break
+        lista_primos.append(proximo)
     proximo+=2
